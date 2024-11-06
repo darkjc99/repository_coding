@@ -4,12 +4,15 @@ class Fruit:
         self.calories = calories
 
     def explode(self):
-        print(self.name, 'exploded!')
+        print(self.name, "exploded!")
 
     def eat(self):
-        print(self.name, 'has been eaten!')
-def hello():
-    print('Hello')
+        print(self.name, "has been eaten!")
 
-Fruit('Banana',10).eat()
+
+def hello():
+    print("Hello")
+
+
+Fruit("Banana", 10).eat()
 hello()
