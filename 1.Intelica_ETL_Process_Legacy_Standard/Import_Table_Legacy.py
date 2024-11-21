@@ -2,15 +2,15 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Paso 1: Leer el archivo CSV
-input_file = 'C:/Users/julio.cardenas/exchange_rate_20240729_20240810_visa.csv'  # Nombre del archivo CSV de entrada
-df = pd.read_csv(input_file, delimiter=';')
+input_file = 'C:/Users/julio.cardenas/clearing_and_settlement_advice_ep733f.csv'  # Nombre del archivo CSV de entrada
+df = pd.read_csv(input_file, delimiter=',')
 
 # Paso 2: Configuración de la conexión a la nueva base de datos SQL Server
 new_server = '10.0.4.100'  # Reemplaza con el nombre de tu nuevo servidor
 new_database = 'ITLCMN'  # Reemplaza con el nombre de tu nueva base de datos
 new_username = 'SoporteITX'  # Reemplaza con tu nuevo usuario
 new_password = 'kSN^3xrW7Mw0'  # Reemplaza con tu nueva contraseña
-new_table_name = 'exchange_rate_20240729_20240810_visa'  # Reemplaza con el nombre de la nueva tabla
+new_table_name = 'clearing_settlement_ep733f'  # Reemplaza con el nombre de la nueva tabla
 
 
 # Cadena de conexión a SQL Server

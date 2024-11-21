@@ -9,7 +9,7 @@ pg_port = '5432'  # Puerto de PostgreSQL
 pg_database = 'interchange'  # Base de datos de PostgreSQL
 pg_username = 'root'  # Usuario de PostgreSQL
 pg_password = 'p5JBBBq>2&p`C]l%'  # Contraseña de PostgreSQL
-pg_table_name = 'public.exchange_rate_20240729_20240810_visa'  # Nombre de la tabla en PostgreSQL
+pg_table_name = 'public.exchange_rate_20241105_20241110_mastercard'  # Nombre de la tabla en PostgreSQL
 
 # Cadena de conexión a PostgreSQL
 pg_connection_string = f'postgresql://{pg_username}:{pg_password}@{pg_host}:{pg_port}/{pg_database}'
@@ -21,12 +21,18 @@ pg_engine = create_engine(pg_connection_string)
 query = f'SELECT * FROM {pg_table_name}'
 df = pd.read_sql(query, pg_engine)
 
+
+#Caso migracion tabla de tipo de cambio
+if 'exchange_value' in df.columns:
+    df['exchange_value'] = df['exchange_value'].apply(lambda x: f"{x:.10f}".replace(',', '.'))
+
+
 # Paso 3: Configuración de la conexión a SQL Server
 sql_server = '10.0.4.100'  # Dirección de tu servidor SQL Server
 sql_database = 'ITLCMN'  # Base de datos de SQL Server
 sql_username = 'SoporteITX'  # Usuario de SQL Server
 sql_password = 'kSN^3xrW7Mw0'  # Contraseña de SQL Server
-sql_table_name = 'exchange_rate_20240729_20240810_visa'  # Nombre de la tabla en SQL Server
+sql_table_name = 'exchange_rate_20241105_20241110_mastercard'  # Nombre de la tabla en SQL Server
 
 # Cadena de conexión a SQL Server
 sql_connection_string = f'mssql+pyodbc://{sql_username}:{sql_password}@{sql_server}/{sql_database}?driver=ODBC+Driver+17+for+SQL+Server'
