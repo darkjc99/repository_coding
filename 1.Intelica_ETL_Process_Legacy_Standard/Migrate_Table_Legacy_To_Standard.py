@@ -23,12 +23,12 @@ df = pd.read_sql(query, sql_engine)
 print(f"Datos exportados exitosamente de SQL Server a PostgreSQL en el dataframe")
 
 # Paso 3: Configuración de la conexión a PostgreSQL
-pg_host = 'app-interchange-analytics-rds-psql-prd.cf3zxr6zcsiz.us-east-1.rds.amazonaws.com'  # Dirección de tu servidor PostgreSQL
+pg_host = 'app-interchange-aurora-priv-cluster-prd-cluster.cluster-cf3zxr6zcsiz.us-east-1.rds.amazonaws.com'  # Dirección de tu servidor PostgreSQL
 pg_port = '5432'  # Puerto de PostgreSQL
-pg_database = 'interchange_analytics'  # Base de datos de PostgreSQL
+pg_database = 'interchange'  # Base de datos de PostgreSQL
 pg_username = 'root'  # Usuario de PostgreSQL
-pg_password = '9?4.WHisG|E<WZmV4_{v-f$vBS)B'  # Contraseña de PostgreSQL
-pg_table_name = 'report_transaction_rbc_202401_202403'  # Nombre de la tabla en PostgreSQL
+pg_password = 'p5JBBBq>2&p`C]l%'  # Contraseña de PostgreSQL
+pg_table_name = 'settlement_bankserv_202404_202406'  # Nombre de la tabla en PostgreSQL
 
 # Cadena de conexión a PostgreSQL
 pg_connection_string = f'postgresql://{pg_username}:{pg_password}@{pg_host}:{pg_port}/{pg_database}'
