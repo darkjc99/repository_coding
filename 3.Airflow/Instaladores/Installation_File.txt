@@ -1,0 +1,54 @@
+Instalación ambiente Airflow:
+
+- Instalación WSL (FUNCIONO): 
+	Se necesita permisos de administrador
+	Se ejecuta mediante el cmd con permisos ADMIN y correr linea de comando "wsl --install"
+
+- Instalación de UBUNTU (FUNCIONO):
+	Se instalo mediante el Microsoft Store
+	Ejecutar una vez descarga desde la barra de busqueda y dejar que instale los archivos de red
+	Crear usuario y contraseña:
+		host
+		1234
+	Crear carpeta Astro dentro de \\wsl.localhost\Ubuntu-24.04\home\host -> mkdir Astro
+	Ejecutar sudo apt-get update
+	
+- Instalación Docker (FUNCIONO):
+	https://help.wnpower.com/hc/es/articles/360048910771-C%C3%B3mo-instalar-Docker-en-tu-servidor-con-Ubuntu
+	
+	Ejecutar lineas de comando:
+	
+		sudo apt-get update
+
+		sudo apt-get install \
+		 apt-transport-https \
+		 ca-certificates \
+		 curl \
+		 gnupg-agent \
+		 software-properties-common
+		 
+		curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+		
+		sudo add-apt-repository \
+		 "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+		 $(lsb_release -cs) \
+		 stable"
+		
+		sudo apt-get update
+		sudo apt-get install docker-ce docker-ce-cli containerd.io
+		
+		sudo docker run hello-world
+		
+- Instslar Astro CLI (FUNCIONO):
+
+		curl -sSL install.astronomer.io | sudo bash -s
+		
+		entrar a la carpeta Astro creada y escribir 
+			astro dev init
+			code .
+			
+			VS_CODE:
+			sudo usermod -aG docker $USER
+			astro dev start
+		
+		
